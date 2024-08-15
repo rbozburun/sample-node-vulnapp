@@ -1,4 +1,5 @@
 # vulnerable_script.py
+# gitleaks detect -s /path/to/your/repo --report=gitleaks_report.json
 
 import requests
 
