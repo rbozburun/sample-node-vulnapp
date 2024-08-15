@@ -20,7 +20,7 @@ steps:
     format: 'HTML'
     uploadReports: true
     enableVerbose: true
-    localInstallPath: 'C:\dependency-check\bin'
+    localInstallPath: 'C:\dependency-check'
 - task: Gitleaks@2
   inputs:
     scanlocation: '$(Build.SourcesDirectory)'
