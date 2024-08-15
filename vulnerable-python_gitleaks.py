@@ -6,8 +6,8 @@ import requests
 
 def connect_to_database():
     # Hardcoded credentials (vulnerable)
-    username = "admin"
-    password = "SuperSecretPassword123"
+    username = ""
+    password = ""
 
     # Connection string (vulnerable)
     connection_string = f"postgresql://{username}:{password}@localhost:5432/mydatabase"
@@ -16,7 +16,7 @@ def connect_to_database():
 
 def access_third_party_api():
     # Hardcoded API key (vulnerable)
-    api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+    api_key = ""
 
     url = "https://api.example.com/data"
     headers = {
