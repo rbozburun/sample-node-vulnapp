@@ -2,6 +2,7 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+# dependency-check.bat -f HTML --project "Dependency Check Local" -o ../dependency-check-output -s .
 
 trigger:
 - none
@@ -15,12 +16,16 @@ steps:
 
 - task: dependency-check-build-task@6
   inputs:
-    projectName: 'test'
+    projectName: 'Owasp Dependency Check - PipelineTask'
     scanPath: './*'
     format: 'HTML'
     uploadReports: true
+    uploadSARIFReport: true
+    failOnCVSS: '1'
+    warnOnCVSSViolation: true
     enableVerbose: true
     localInstallPath: 'C:\dependency-check'
+    dependencyCheckVersion: 
 - task: Gitleaks@2
   inputs:
     scanlocation: '$(Build.SourcesDirectory)'
